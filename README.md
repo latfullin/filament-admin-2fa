@@ -1,8 +1,8 @@
 # filament-admin-2fa
 
-Переиспользуемая TOTP-двухфакторная аутентификация для панелей Filament 5.
+Переиспользуемая TOTP-двухфакторная аутентификация для панелей Filament 4 и 5.
 
-Filament 5 умеет multi-factor сам — криптография, QR, коды восстановления и
+Filament умеет multi-factor сам — криптография, QR, коды восстановления и
 защита от повторного ввода кода там уже написаны и протестированы. Этот пакет
 их **не переписывает**. Он убирает то, что иначе копируется руками в каждый
 новый проект:
@@ -19,11 +19,26 @@ Filament 5 умеет multi-factor сам — криптография, QR, ко
 
 ## Установка
 
-```bash
-composer require kilke/filament-admin-2fa
+Добавьте публичный Git-репозиторий в `composer.json` проекта:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/latfullin/filament-admin-2fa.git"
+        }
+    ]
+}
 ```
 
-Пакет требует `filament/filament ^5.0` и PHP 8.3+.
+Затем установите пакет:
+
+```bash
+composer require kilke/filament-admin-2fa:^1.0
+```
+
+Пакет требует `filament/filament ^4.0|^5.0` и PHP 8.3+.
 
 ### 1. Конфиг и миграция
 
