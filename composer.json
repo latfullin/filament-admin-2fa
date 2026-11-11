@@ -1,0 +1,48 @@
+{
+    "name": "kilke/filament-admin-2fa",
+    "description": "Reusable TOTP two-factor authentication for Filament panels: migration, model trait, panel plugin, artisan commands and test helpers.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "filament", "2fa", "totp", "two-factor", "authentication"],
+    "require": {
+        "php": "^8.3",
+        "filament/filament": "^5.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0",
+        "pragmarx/google2fa-qrcode": "^4.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "laravel/pint": "^1.20",
+        "phpunit/phpunit": "^11.0|^12.0"
+    },
+    "suggest": {
+        "bacon/bacon-qr-code": "Renders the setup QR code as inline SVG when the imagick extension is unavailable."
+    },
+    "autoload": {
+        "psr-4": {
+            "Kilke\\FilamentAdmin2fa\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kilke\\FilamentAdmin2fa\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kilke\\FilamentAdmin2fa\\TwoFactorServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": false
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
